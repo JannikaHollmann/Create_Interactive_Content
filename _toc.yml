@@ -9,7 +9,7 @@ parts:
   - file: Motivation
 - caption: Getting started
   chapters:
-  - file: Demo_website
+  - file: demo_website/Demo_website
   - file: setup/setup
 - caption: Practical guidance
   chapters:
