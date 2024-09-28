@@ -15,6 +15,9 @@ parts:
   chapters:
   - file: course_template
   - file: 10min
+- caption: The end
+  chapters: 
+  - file: Summary
 - caption: Miscellaneous 
   chapters:
   - file: ressources/info
