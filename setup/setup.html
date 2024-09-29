@@ -473,7 +473,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -489,6 +491,18 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-software">Required Software</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-a-github-account">Setting up a GitHub account</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-if-you-are-ready"><strong>Check if you are ready</strong></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -502,23 +516,54 @@ document.write(`
 <h1>Setup: Before Creating Content<a class="headerlink" href="#setup-before-creating-content" title="Link to this heading">#</a></h1>
 <p>Fortunately and unfortunately comitting to open source projects usually requires more in-depth knowledge than just pushing some slides onto dropbox and sending a link to your students.</p>
 <p>To replicate the showcased websites here we’ll therefore be using some tools that you might not be familliar with. The following section will illustrate exatly what we need, how to install the necessary tools and where to go for further information.</p>
-<ul class="simple">
+<section id="required-software">
+<h2>Required Software<a class="headerlink" href="#required-software" title="Link to this heading">#</a></h2>
+<ul>
 <li><p>We’ll need the following</p></li>
-<li><p><a class="reference external" href="https://conda-forge.org/">conda</a></p></li>
-<li><p><a class="reference external" href="https://git-scm.com">git</a></p></li>
-<li><p><a class="reference external" href="https://code.visualstudio.com/">VsCode</a></p></li>
-<li><p><a class="reference external" href="https://jupyter.org/">Jupyter</a></p></li>
-<li><p><a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">Jupyter books</a></p></li>
 <li><p>a <a class="reference external" href="https://github.com/">Github</a> account</p></li>
-<li><p><a class="reference external" href="https://nbgrader.readthedocs.io/en/stable/">nbgrader</a></p></li>
-</ul>
-<p>Helpful tool that is not strictly necessary but can be quite useful or makes your life easier:</p>
-<ul class="simple">
+<li><p>a version control system</p>
+<ul>
+<li><p><a class="reference external" href="https://git-scm.com">git (command line tool)</a> and <em>Bash</em></p>
+<p>or</p>
+</li>
 <li><p><a class="reference external" href="https://www.gitkraken.com/">GitKraken</a></p></li>
 </ul>
-<p><strong>Note</strong>: If the instructions aren’t working and you have spent more than 15-20 minutes troubleshooting on your own, reach out on the #help-installation channel on the Discord channel with the exact problems you’re having.
-One of the instructors will try and get back to you quickly to help resolve the situation.
-If they’re unable to help via <code class="docutils literal notranslate"><span class="pre">Discord</span></code>, you may be directed to attend one of the installation office hours.</p>
+</li>
+<li><p>An IDE or text editor: e.g. VSCode (recommended)</p>
+<ul>
+<li><p><a class="reference external" href="https://code.visualstudio.com/">VsCode</a></p>
+<p>or</p>
+</li>
+<li><p><a class="reference external" href="https://jupyter.org/">Jupyter (to create interactive materials)</a></p></li>
+</ul>
+</li>
+</ul>
+<p>For this tutorial we will be relying on the <a class="reference external" href="https://www.gitkraken.com/">Gitkraken client</a>**, a software package icnluding a Graphical-user-interface to manage all your git/Github projects. If you’re not too familiar with coding or simply prefer to have a visual overview of the exact changes you’ve made, your version history, etc., this might just be the better choice for you, than using Git via the command line.</p>
+<p>Simply download and install the <a class="reference external" href="https://help.gitkraken.com/gitkraken-client/how-to-install/">Gitkraken client</a> and <a class="reference external" href="https://www.youtube.com/watch?v=5nhNfMcczlQ">connect it to your online Github profile</a>.</p>
+<section id="setting-up-a-github-account">
+<h3>Setting up a GitHub account<a class="headerlink" href="#setting-up-a-github-account" title="Link to this heading">#</a></h3>
+<p>First things first, let us set up a GitHub Account.</p>
+<p><strong>1. Go to the GitHub website</strong>: Open a web browser and navigate to the <a class="reference external" href="https://github.com/">github.com</a>.</p>
+<p><strong>2. Click on the “Sign up”</strong> button located in the upper-right corner.</p>
+<p><strong>3. Fill out the registration form</strong>: Fill out the required information and choose a username. Choose your username carefully, as your username will be included in the link to the website we’re going to build and will be publicly displayed!</p>
+<p><strong>4. Verify your email address</strong>: Check your email inbox and click on the verification link sent by GitHub.</p>
+<p><strong>5. Customize your profile</strong>: Fill out your profile information. This will help others to find and connect with you on GitHub.</p>
+</br>
+<p><strong>And that’s it!</strong>
+You can now use your new GitHub account to store your code online or collaborate and share your projects with the world!</p>
+</section>
+<section id="check-if-you-are-ready">
+<h3><strong>Check if you are ready</strong><a class="headerlink" href="#check-if-you-are-ready" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Can you open a text editor?</p></li>
+<li><p>Can you go to your GitHub account?</p></li>
+<li><p>A.) When you open a terminal on your system and type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code>, does it output the version number? (macOS / Linux: you might need to run this: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">anaconda</span> <span class="pre">git</span></code>)</p>
+<p>or</p>
+</li>
+<li><p>B.) Open Gitkraken and create a new repository (called initiating a new repository, under “Start a local project”)</p></li>
+</ul>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -575,6 +620,25 @@ If they’re unable to help via <code class="docutils literal notranslate"><span
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-software">Required Software</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-a-github-account">Setting up a GitHub account</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-if-you-are-ready"><strong>Check if you are ready</strong></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
