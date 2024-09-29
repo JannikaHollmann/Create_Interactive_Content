@@ -11,10 +11,11 @@ parts:
   chapters:
   - file: demo_website/Demo_website
   - file: setup/setup
-- caption: Practical guidance
+- caption: Practice
   chapters:
   - file: course_template
   - file: 10min
+  - file: course_content
 - caption: The end
   chapters: 
   - file: Summary
