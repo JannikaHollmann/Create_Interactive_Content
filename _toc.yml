@@ -16,6 +16,9 @@ parts:
   - file: course_template
   - file: 10min
   - file: course_content
+- caption: Ther certain something
+  chapters:
+  - file: tutorialcontent/writing/interactive
 - caption: The end
   chapters: 
   - file: Summary
