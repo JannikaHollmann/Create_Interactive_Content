@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Making Books truly interactive &#8212; Creating and Sharing Interactive Learning Materials</title>
+    <title>MyBinder and Google Colab integration &#8212; Creating and Sharing Interactive Learning Materials</title>
   
   
   
@@ -487,7 +487,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Making Books truly interactive</h1>
+    <h1>MyBinder and Google Colab integration</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -498,10 +498,19 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives 📍</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mybinder">MyBinder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mybinder-and-google-colab">MyBinder and Google Colab</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-how-to">The How-To</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-mybinder-environment">1. Setting up the MyBinder environment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-the-config-yml">2. Changing the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mybinder">MyBinder</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-mybinder-environment">1. Setting up the MyBinder environment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-the-config-yml">2. Changing the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-colab">Google Colab</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. Changing the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#authorize-google-colab">2. Authorize Google Colab</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#great">Great!</a></li>
 </ul>
 </li>
 </ul>
@@ -515,8 +524,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="making-books-truly-interactive">
-<h1>Making Books truly interactive<a class="headerlink" href="#making-books-truly-interactive" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="mybinder-and-google-colab-integration">
+<h1>MyBinder and Google Colab integration<a class="headerlink" href="#mybinder-and-google-colab-integration" title="Link to this heading">#</a></h1>
 <p>In the modern world, where information is abundant, and attention spans are short, <code class="docutils literal notranslate"><span class="pre">interactive</span> <span class="pre">content</span></code> has become a critical factor in successful education. Interactive content engages learners by providing an <code class="docutils literal notranslate"><span class="pre">immersive</span> <span class="pre">and</span> <span class="pre">engaging</span> <span class="pre">learning</span> <span class="pre">experience</span></code> that goes beyond passive consumption of information. Interactive content allows learners to actively participate in the learning process, making it more memorable and <code class="docutils literal notranslate"><span class="pre">increasing</span> <span class="pre">retention.</span></code> By combining various media, such as text, images, audio, video, and interactive elements, educators can provide a more comprehensive and engaging learning experience. Interactive content also enables learners to progress at their own pace, allowing them to focus on areas where they need more help and skip over content they already know. As such, interactive content is a <code class="docutils literal notranslate"><span class="pre">powerful</span> <span class="pre">tool</span> <span class="pre">for</span> <span class="pre">modern</span> <span class="pre">education</span></code> that can help learners retain information, stay engaged, and achieve better results.</p>
 <p>Previously, in this tutorial, we have described how <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Book</span> <span class="pre">performs</span> <span class="pre">exceptionally</span> <span class="pre">well</span></code> in providing the means for interactive content. But how do you make content like code cells or graphics interactive?</p>
 <p>In this part of the tutorial, you will learn just that!</p>
@@ -527,34 +536,60 @@ document.write(`
 <li><p>Learn how to embed interactive graphics in your book</p></li>
 </ul>
 </section>
-<section id="mybinder">
-<h2>MyBinder<a class="headerlink" href="#mybinder" title="Link to this heading">#</a></h2>
-<p>In today’s digital age, there are many tools available for interactive learning, and one of the most exciting ones is MyBinder. MyBinder is a free and open-source service that allows users to create custom computing environments for their projects, experiments, and interactive learning activities. It allows users to create and share executable versions of their code in a reproducible and accessible format, enabling interactive learning experiences for students, researchers, and developers.</p>
+<section id="mybinder-and-google-colab">
+<h2>MyBinder and Google Colab<a class="headerlink" href="#mybinder-and-google-colab" title="Link to this heading">#</a></h2>
+<p>In today’s digital age, there are many tools available for interactive learning, and one of the most exciting ones is <a class="reference external" href="https://mybinder.readthedocs.io/en/latest/"><strong>MyBinder</strong></a>. MyBinder is a free and open-source service that allows users to create custom computing environments for their projects, experiments, and interactive learning activities. It allows users to create and share executable versions of their code in a reproducible and accessible format, enabling interactive learning experiences for students, researchers, and developers.</p>
 <p>MyBinder is built on top of Jupyter, an open-source web-based computing environment that enables interactive data science and scientific computing. MyBinder allows users to create a customized version of Jupyter, including their choice of libraries, programming languages, and data sets. Users can then share a link to their Binder environment, allowing others to reproduce and interact with their work.</p>
 <p>One of the primary benefits of MyBinder is its ease of use. It requires no installation, configuration, or maintenance of software, making it accessible to users of all skill levels. Anyone with a web browser can access a MyBinder environment, making it an ideal platform for sharing interactive learning activities with a broader audience.</p>
 <p>Another significant advantage of MyBinder is its reproducibility. By sharing a Binder environment, users can ensure that their code, data, and results are all accessible and reproducible, even if they change or update their code in the future. This feature is especially important for researchers, who must ensure that their results are accurate and can be replicated by others.</p>
 <p>MyBinder is also an excellent tool for collaborative learning. It allows users to share their work with others, collaborate on projects, and learn from each other’s code. Additionally, MyBinder can be used to teach programming and data science concepts in a hands-on, interactive way. Teachers can create Binder environments that provide students with everything they need to get started, including tutorials, data sets, and code examples.</p>
+<p>However, sometimes MyBinder works very slowly. So, instead of MyBinder you can also use <a class="reference external" href="https://colab.research.google.com/notebooks/intro.ipynb"><strong>Google Colab</strong></a>, which works usually faster. Depending on whether you like to use an implementation of Google or not, you know which tool to use.</p>
 </section>
 <section id="the-how-to">
 <h2>The How-To<a class="headerlink" href="#the-how-to" title="Link to this heading">#</a></h2>
+<section id="mybinder">
+<h3>MyBinder<a class="headerlink" href="#mybinder" title="Link to this heading">#</a></h3>
 <p>One of the great things about Jupyter Book is that it allows users to integrate MyBinder environments directly into their books, allowing readers to interact with and run code directly from the book’s pages.</p>
 <section id="setting-up-the-mybinder-environment">
-<h3>1. Setting up the MyBinder environment<a class="headerlink" href="#setting-up-the-mybinder-environment" title="Link to this heading">#</a></h3>
+<h4>1. Setting up the MyBinder environment<a class="headerlink" href="#setting-up-the-mybinder-environment" title="Link to this heading">#</a></h4>
 <p>To integrate MyBinder into a Jupyter Book, the first step is to create a Binder environment using the MyBinder website. Once the environment is set up, the next step is to add a MyBinder badge to the Jupyter Book’s repository. This badge is a clickable image that will launch the MyBinder environment when clicked.</p>
 <p>Visit <a class="reference internal" href="#mybinder.org"><span class="xref myst">mybinder.org</span></a>, add the link to your GitHub repository and click on <code class="docutils literal notranslate"><span class="pre">launch</span></code></p>
-<p><img alt="MyBinder Set-Up" src="https://raw.githubusercontent.com/felixkoerber/jb/main/static/mybinder.png" /></p>
+<p><img alt="MyBinder Set-Up" src="%22https://raw.githubusercontent.com/JannikaHollmann/Create_Interactive_Content/main/static/mybinderlink.png%22," /></p>
 </section>
 <section id="changing-the-config-yml">
-<h3>2. Changing the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code><a class="headerlink" href="#changing-the-config-yml" title="Link to this heading">#</a></h3>
+<h4>2. Changing the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code><a class="headerlink" href="#changing-the-config-yml" title="Link to this heading">#</a></h4>
 <p>To actually make your changes visible, you will have to modify the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file found in the lecture folder of the <a class="reference external" href="https://github.com/M-earnest/course_template_diler">template</a>, add the following bit of code:</p>
 <div class="highlight-# notranslate"><div class="highlight"><pre><span></span>launch_buttons:
-  notebook_interface        : &quot;classic&quot;  # The interface interactive links will activate [&quot;classic&quot;, &quot;jupyterlab&quot;]
+  notebook_interface        : &quot;jupyterlab&quot;  # The interface interactive links will activate 
   binderhub_url             : &quot;https://mybinder.org&quot;  # The URL of the BinderHub (e.g., https://mybinder.org)
   thebe                     : true  # Add a thebe button to pages (requires the repository to run on Binder)
 </pre></div>
 </div>
 <p><img alt="Launch MyBinder" src="https://raw.githubusercontent.com/felixkoerber/jb/main/static/Launch_binder.png" /></p>
 <p>Now, both the <code class="docutils literal notranslate"><span class="pre">Binder</span></code>- and <code class="docutils literal notranslate"><span class="pre">Live</span> <span class="pre">Code</span></code> Badge are displayed on your Book and you should be good to go!</p>
+</section>
+</section>
+<section id="google-colab">
+<h3>Google Colab<a class="headerlink" href="#google-colab" title="Link to this heading">#</a></h3>
+<p>When implementing Google Colab the order of actions is a little different, because you start by adjusting the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> and then authorize Google Colab.
+But one step after another</p>
+<section id="id1">
+<h4>1. Changing the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code><a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>As described above direct to your <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file in the lecture folder of the template and simply add the following line of code right beneath <code class="docutils literal notranslate"><span class="pre">thebe</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">colab_url:</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;https://colab.research.google.com&quot;</span></code></p>
+<p><img alt="Colab Setup" src="%22https://raw.githubusercontent.com/JannikaHollmann/Create_Interactive_Content/main/static/colabbutton.png%22," /></p>
+<p>Now, the <code class="docutils literal notranslate"><span class="pre">Google</span> <span class="pre">Colab</span></code> Badge is displayed on your Book!</p>
+</section>
+<section id="authorize-google-colab">
+<h4>2. Authorize Google Colab<a class="headerlink" href="#authorize-google-colab" title="Link to this heading">#</a></h4>
+<p>When everything so far is set up, navigate your mouse to the colab button and click on it.
+You are automatically forwarded to this site, where you just have to click the green button an thereby authorize google colab.</p>
+<p><img alt="Colab authorization" src="%22https://raw.githubusercontent.com/JannikaHollmann/Create_Interactive_Content/main/static/colab_authorization.png%22," /></p>
+</section>
+</section>
+<section id="great">
+<h3>Great!<a class="headerlink" href="#great" title="Link to this heading">#</a></h3>
+<p>You just set up MyBinder and Google Colab to make your books truly interactive!</p>
 </section>
 </section>
 </section>
@@ -606,10 +641,19 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives 📍</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mybinder">MyBinder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mybinder-and-google-colab">MyBinder and Google Colab</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-how-to">The How-To</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-mybinder-environment">1. Setting up the MyBinder environment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-the-config-yml">2. Changing the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mybinder">MyBinder</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-mybinder-environment">1. Setting up the MyBinder environment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-the-config-yml">2. Changing the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-colab">Google Colab</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. Changing the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#authorize-google-colab">2. Authorize Google Colab</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#great">Great!</a></li>
 </ul>
 </li>
 </ul>
