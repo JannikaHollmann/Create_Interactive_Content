@@ -542,13 +542,16 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="git-github-and-hosting-websites-using-github-pages">
 <h1>Git, GitHub and hosting websites using GitHub Pages<a class="headerlink" href="#git-github-and-hosting-websites-using-github-pages" title="Link to this heading">#</a></h1>
 <p><strong>To publish your course/website, we will be relying on Github, a web-based platform that provides hosting and storage services for software and data</strong>.</p>
-<p>Github, or the underlying version control system “Git”, is basically used in every large software project that you can think of. A Github server may be set up on a local machine or network if the access to the hosted software or data should be restricted, but we’ll be using the public Github server, i.e., the <a class="reference external" href="https://github.com">web-based version of Github</a>.
+<p>Github, or the underlying version control system “Git”, is basically used in every large software project that you can think of. A Github server may be set up on a local machine or network if the access to the hosted software or data should be restricted, but we’ll be using the public Github server, i.e., the <a class="reference external" href="https://github.com">web-based version of Git</a>.
 In essence, this allows us to openly share and for other people to make copies or download our projects, e.g., for collaborative development or issue tracking. It further allows for feedback on our courses or the reporting of possible errors people may have encountered.</p>
-<p>This project is built on the idea that the knowledge that we’re trying to share and that the courses built on this framework should be as accessible as possible; therefore, we opted to host this <a class="reference external" href="https://github.com/felixkoerber/jb">course</a>, as well as our <a class="reference external" href="https://github.com/M-earnest/course_template_diler">course template</a> via Github. This allows you and others to simply download the contained materials and adapt them to make your own projects. Further, Github allows us to host websites like this one via the “Github pages” service free of any charge.</p>
 <p><strong>The following lesson will contain information on</strong></p>
 <ul class="simple">
 <li><p>how to set up your public Github account,</p></li>
-<li><p>how to set up a project (your course in this case) on GitHub contained in the GitHub “repository,”</p></li>
+<li><p>how to set up a project (your course in this case) on GitHub contained in the GitHub “repository,”</p>
+<ul>
+<li><p>by using our template</p></li>
+</ul>
+</li>
 <li><p>how to use the version control software “Git” to manage your projects, how to “push” your local course materials to your online repository, and how to host your course website using Github pages.</p></li>
 </ul>
 <section id="goals">
@@ -556,22 +559,11 @@ In essence, this allows us to openly share and for other people to make copies o
 <p>This chapter aims to include the following goals. Do check back here later and you feel like the lesson addressed the stated goals appropriately!</p>
 <ol class="arabic simple">
 <li><p>Understand the benefits of using GitHub</p></li>
-<li><p>Learn how to set up your GitHub account</p></li>
 <li><p>Learn how to record changes via git</p></li>
 <li><p>Learn how to set up and connect local and online (remote) repository</p></li>
 <li><p>learn how to submit my changes to an online repository</p></li>
 <li><p>Learn how to host a website using Github pages</p></li>
 </ol>
-<p><strong><em>Roadmap</em></strong></p>
-<ul class="simple">
-<li><p><strong>What’s Github and why should you use it? (skip this if you’re already familiar with the concept</strong></p></li>
-<li><p>Setting up a GitHub account</p></li>
-<li><p>Start a project/set up a public repository</p></li>
-<li><p>Setup your local machine for working with Git/Github</p></li>
-<li><p>Getting started with Github/Github WorkflowS</p></li>
-<li><p>Working with the Course template</p></li>
-<li><p>Hosting a website using Github pages</p></li>
-</ul>
 </section>
 <section id="getting-started">
 <h2>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
@@ -599,18 +591,11 @@ In essence, this allows us to openly share and for other people to make copies o
 <section id="git-workflow">
 <h3>Git Workflow<a class="headerlink" href="#git-workflow" title="Link to this heading">#</a></h3>
 <p><strong>A standard Git workflow may look something like this:</strong></p>
-<p><strong>1. Create a repository</strong>: Create an online repository by clicking the “New repository” button on the GitHub website. Give your repository a name and a description, and select the “public” option.</p>
-<p><strong>2. Clone the repository</strong>: To start working with your repository, you will need to “clone” it to your local computer. This will create a copy of the repository on your computer that you can work with. To clone a repository, click on the “Clone or download” button and copy the URL.</p>
-<p><code class="docutils literal notranslate"><span class="pre">BASH</span></code>: Open a terminal or command prompt and input the following command: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/username/repositoryname.</span></code>Where username is your user name and repository name is the name of your repository.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Gitkraken</span></code>: Click on <code class="docutils literal notranslate"><span class="pre">file,</span></code> <code class="docutils literal notranslate"><span class="pre">clone</span> <span class="pre">repo</span></code> and input where the repo should be stored on your system as well as the URL to the repo, i.e., <code class="docutils literal notranslate"><span class="pre">https://github.com/username/repositoryname.</span></code></p>
-<p><strong>3. Make changes</strong>: Now that you have a local copy of the repository, you can change the code. Simply open the files in your editor and make the changes you want, or create new files and folders.</p>
-<p><strong>4. Commit changes</strong>: When you’re done making changes, you’ll need to “commit” them to the repository. Committing a change records it in the repository’s history and makes it part of the codebase.</p>
-<p><code class="docutils literal notranslate"><span class="pre">BASH</span></code>:To commit a change, run the following commands in the terminal: git add ., git commit -m “Your commit message”. Replace “Your commit message” with a brief description of the changes you made.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Gitkraken</span></code>:  Click on <code class="docutils literal notranslate"><span class="pre">file,</span></code> <code class="docutils literal notranslate"><span class="pre">open</span> <span class="pre">repo</span></code>, and select the repo containing your changes. On the left-hand side, you will see the “file” overview. Under unstaged files, you can review your changes. Click the green “stage all changes” button or right-click on individual files/folders and select “stage.” The files will be added to the “staged” files windows. Provide a name for your changes (commit) in the summary field below and add a short but meaningful description of your changes. Lastly, hit the green “Stage changes/changes to commit” button.</p>
-<p>stage_menu.png</p>
-<p><strong>5. Push changes</strong>: Finally, you’ll need to “push” your changes to the remote repository on GitHub. This will upload your changes to the website so that others can see them.</p>
-<p><code class="docutils literal notranslate"><span class="pre">BASH</span></code>: To push your changes, run the following command: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">master</span></code>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Gitkraken</span></code>: Hit the “Push” button on the upper center of the window.</p>
+<p><a class="reference external" href="https://felixkoerber.github.io/jb/tutorialcontent/publishing/account.html#start-a-project-setup-a-public-repository"><strong>1. Create a repository</strong></a></p>
+<p><strong>2. Clone the repository</strong></p>
+<p><strong>3. Make changes</strong></p>
+<p><strong>4. Commit changes</strong></p>
+<p><strong>5. Push changes</strong></p>
 </section>
 </section>
 <section id="working-with-the-course-template">
@@ -621,23 +606,39 @@ In essence, this allows us to openly share and for other people to make copies o
 <h3>1. <a class="reference external" href="https://felixkoerber.github.io/jb/tutorialcontent/publishing/account.html#start-a-project-setup-a-public-repository">Create a fresh Git Repository for your project</a><a class="headerlink" href="#create-a-fresh-git-repository-for-your-project" title="Link to this heading">#</a></h3>
 <p>Let’s put your new GitHub account to use, by creating a new online repository, often referred to as a “remote repo”!</p>
 <ol class="arabic simple">
-<li><p>Open Github in your browser</p></li>
+<li><p>Open <a class="reference external" href="https://github.com/">Github</a> in your browser and log in</p></li>
 <li><p>Click on the <code class="docutils literal notranslate"><span class="pre">+</span></code> sign in the top right corner and click “New repository”</p></li>
-<li><p>Fill out the repository details: Give your repository a name, description, and check the box next to “public” to make sure others can find your directory.</p></li>
+<li><p>Fill out the repository details:</p></li>
 </ol>
+<ul class="simple">
+<li><p>Give your repository a name and a description</p></li>
+<li><p>check the box next to “public” to make sure others can find your directory.</p></li>
+</ul>
 <p>This could look something like this:</p>
 <img src="https://github.com/felixkoerber/jb/blob/main/static/new_repo_example.png?raw=true" alt="depicting an example of a new repository" class="bg-primary" width="500px">
 <ol class="arabic simple" start="4">
-<li><p>Check the box “Add a README file”, this will initiate your repository with a file that can later be used to display basic information to others viewing your repo.</p></li>
-<li><p>Choose a license! You can start out with “None” as this repo is just for testing, but if you plan to use Github for your projects it’s imperative to include one to prevent misuse.</p></li>
-<li><p>Click the “Create repository” button to create your new repository.</p></li>
-<li><p>Now you can add files to your repository by clicking the “Add file” button by either uploading them or creating a new file.</p></li>
+<li><p>Check the box <code class="docutils literal notranslate"><span class="pre">Public</span></code></p></li>
+<li><p>Check the box <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">a</span> <span class="pre">README</span> <span class="pre">file</span></code></p></li>
+</ol>
+<ul class="simple">
+<li><p>this will initiate your repository with a file that can later be used to display basic information to others viewing your repo.</p></li>
+</ul>
+<ol class="arabic simple" start="6">
+<li><p>Choose a license!</p></li>
+</ol>
+<ul class="simple">
+<li><p>You can start out with “None” as this repo is just for testing, but if you plan to use Github for your projects it’s imperative to include one to prevent misuse.</p></li>
+</ul>
+<ol class="arabic simple" start="7">
+<li><p>Click the <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">repository</span></code> button to create your new repository.</p></li>
+<li><p>Now you can add files to your repository by clicking the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">file</span></code> button by either uploading them or creating a new file.</p></li>
 </ol>
 <p>Congratulations! You are now the proud owner of a GitHub repository. Next, we’ll learn how to connect your local system to your online repos (i.e. “cloning”).</p>
 </section>
 <section id="clone-the-repository">
 <h3>2. Clone the repository<a class="headerlink" href="#clone-the-repository" title="Link to this heading">#</a></h3>
-<p>To start working with your repository, you’ll need to “clone” it to your local computer. This will create a copy of the repository on your computer that you can work with. To clone a repository, click on the “Clone or download” button and copy the URL you’ve used for your forked repo.</p>
+<p>To start working with your repository, you’ll need to “clone” it to your local computer. This will create a copy of the repository on your computer that you can work with. To clone a repository, click on the green <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span> <span class="pre">Code</span></code> button and copy the URL you’ve used for your repo.</p>
+<img src="https://raw.githubusercontent.com/jannikahollmann/Create_Interactive_Content/main/static/copyreponame.png" alt="Copy Repo Name" class="bg-primary mb-1" width="300px">
 <p><code class="docutils literal notranslate"><span class="pre">BASH</span></code>: Open a terminal or command prompt and input the following command: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/username/repositoryname.</span></code>Where username is your user name and repository name is the name of your repository.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Gitkraken</span></code>: Click on <code class="docutils literal notranslate"><span class="pre">file,</span></code> <code class="docutils literal notranslate"><span class="pre">clone</span> <span class="pre">repo</span></code> and input where the repo should be stored on your system as well as the URL to the repo, i.e., <code class="docutils literal notranslate"><span class="pre">https://github.com/username/repositoryname.</span></code></p>
 </section>
@@ -645,36 +646,41 @@ In essence, this allows us to openly share and for other people to make copies o
 <h3>3. <a class="reference external" href="https://felixkoerber.github.io/jb/tutorialcontent/publishing/account.html#working-with-the-course-template">Copy our course template</a><a class="headerlink" href="#copy-our-course-template" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>open our <a class="reference external" href="https://github.com/M-earnest/course_template_diler">course template repository</a></p></li>
-<li><p>click on <code class="docutils literal notranslate"><span class="pre">code</span></code> and then on <em>Download ZIP</em>
-<img alt="Download_template" src="https://github.com/felixkoerber/jb/blob/main/static/Download_template.jpg?raw=true" /></p></li>
-<li><p>Extract the contents of the ZIP file in the folder on your local system linked to your GitHub repository.</p></li>
+<li><p>click on <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span> <span class="pre">Code</span></code> and then on <em>Download ZIP</em>
+<img src="https://raw.githubusercontent.com/jannikahollmann/Create_Interactive_Content/main/static/downloadzip.png" alt="Download zip" class="bg-primary mb-1" width="300px"></p></li>
 </ul>
+<p><code class="docutils literal notranslate"><span class="pre">MacOS</span> <span class="pre">or</span> <span class="pre">Linux</span></code>:
+Extract the contents of the ZIP file in the folder on your local system linked to your GitHub repository.
+<code class="docutils literal notranslate"><span class="pre">Windows</span></code>:
+Extract the contents of the ZIP file and <strong>then</strong> copy the folders (<code class="docutils literal notranslate"><span class="pre">.github</span></code> and <code class="docutils literal notranslate"><span class="pre">lecture</span></code>) in the designated remote repository. You then want to replace the <code class="docutils literal notranslate"><span class="pre">README</span></code> file when asked</p>
 </section>
 <section id="make-changes">
 <h3>4. Make changes<a class="headerlink" href="#make-changes" title="Link to this heading">#</a></h3>
 <p><strong>The course template is structured in the following way</strong></p>
 <img src="https://github.com/felixkoerber/jb/blob/main/static/repo.png?raw=true" alt="depicting the contents of the course template repository on GitHub" class="bg-primary" width="500px">
-<p>Where:</p>
+<p><strong>Where</strong>:</p>
 <ul class="simple">
-<li><p>.github/workflows folder: contains the prewritten scripts to automatically create your website every time new content is pushed online</p></li>
-<li><p>lecture: contains all our content files and directories, as well as the “toc.yml” and the “config.yml” files, which define the strutcture and functionality of the website</p></li>
-<li><p>README: a short explanation of your website/course</p></li>
-<li><p>LICENSE: self-explanatory, stating who and how people are allowed to use or reproduce the content of this repo</p></li>
-<li><p>requirements.txt: contains the necessary requirements for the automatic scripts building the website to run; there is no need to change anything here.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.github/workflows</span></code> folder: contains the prewritten scripts to automatically create your website every time new content is pushed online</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lecture</span></code>: contains all our content files and directories, as well as the “toc.yml” and the “config.yml” files, which define the strutcture and functionality of the website</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">README</span></code>: a short explanation of your website/course</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code>: self-explanatory, stating who and how people are allowed to use or reproduce the content of this repo</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>: contains the necessary requirements for the automatic scripts building the website to run; there is no need to change anything here.</p></li>
 </ul>
-<p>Now, most the things that you’ll be adapting are contained in the content folder “lecture”, which looks like this.</p>
+<p>Now, most the things that you’ll be adapting are contained in the content folder <code class="docutils literal notranslate"><span class="pre">lecture</span></code>, which looks like this.</p>
 <img src="https://github.com/felixkoerber/jb/blob/main/static/lecture_folder.png?raw=true" alt="depicting the contents of the course template repository on GitHub" class="bg-primary" width="500px">
-<p>Where:</p>
+<p><strong>Where</strong>:</p>
 <ul class="simple">
-<li><p>content: contains files making up the main content of a course website</p></li>
-<li><p>general information: contains files providing information, such as the necessary setup, the outline of the course, a code of conduct, etc. The included “<a class="reference external" href="http://index.md">index.md</a>” file will be the landing point of the course website</p></li>
-<li><p>introduction: contains files making up the introductory sessions of a course</p></li>
-<li><p>static: contains all the pictures and graphs contained in a course. It’s recommended that should you add new files. e.g., a course logo to this folder.</p></li>
-<li><p>config.yml: Contains the course title, authors, and copyright notice at the footer of the website, which you should change before hosting your website. Further, it contains the specifics for the technical implementations of a course, e.g., whether Jupyter notebooks should be re-run every time the course website is created  by the GitHub workflow or, e.g., whether a course incorporated interactive elements.</p></li>
-<li><p>toc.yml: contains information on the structure of the course website. For an in-depth explanation, jump to the respective section under “creating content.”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">content</span></code>: contains files making up the main content of a course website</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">general</span> <span class="pre">information</span></code>: contains files providing information, such as the necessary setup, the outline of the course, a code of conduct, etc. The included “<a class="reference external" href="http://index.md">index.md</a>” file will be the landing point of the course website</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">introduction</span></code>: contains files making up the introductory sessions of a course</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">static</span></code>: contains all the pictures and graphs contained in a course. It’s recommended that should you add new files. e.g., a course logo to this folder.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">config.yml</span></code>: Contains the course title, authors, and copyright notice at the footer of the website, which you should change before hosting your website. Further, it contains the specifics for the technical implementations of a course, e.g., whether Jupyter notebooks should be re-run every time the course website is created  by the GitHub workflow or, e.g., whether a course incorporated interactive elements.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">toc.yml</span></code>: contains information on the structure of the course website.</p></li>
 </ul>
-<p><strong>To get started, exchange the information contained in the “<a class="reference external" href="http://index.md">index.md</a>” and the “config.yml” file with your course title, author’s names and affiliation, and so on.</strong>
-Following, you can add Jupyter Notebook or markdown files in e.g., the introduction or content folder according to your needs or simply adapt the already existing files
+<p><strong>To get started, exchange the information contained in the ``toc.yml<code class="docutils literal notranslate"><span class="pre">and</span> <span class="pre">the</span></code>config.yml` file with your course title, author’s names and affiliation, and so on.</strong></p>
+<img src="https://raw.githubusercontent.com/jannikahollmann/Create_Interactive_Content/main/static/configfileadjust.png" alt="config file adjustment" class="bg-primary mb-1" width="500px">
+These are the lines you should adjust within the config file.
+<p>Following, you can add Jupyter Notebook or markdown files in e.g., the introduction or content folder according to your needs or simply adapt the already existing files
 Feel free to check back with the respective lessons on how to modify this template and add files according to your needs:</p>
 <ul class="simple">
 <li><p><strong>Content creation</strong></p>
@@ -723,16 +729,35 @@ Feel free to check back with the respective lessons on how to modify this templa
 </section>
 <section id="commit-changes">
 <h3>5. Commit changes<a class="headerlink" href="#commit-changes" title="Link to this heading">#</a></h3>
-<p>When you’re done making changes, you’ll need to “commit” them to the repository. Committing a change records it in the repository’s history and makes it part of the codebase.</p>
-<p><code class="docutils literal notranslate"><span class="pre">BASH</span></code>:To commit a change, run the following commands in the terminal: git add ., git commit -m “Your commit message.” Replace “Your commit message” with a brief description of the changes you made.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Gitkraken</span></code>:  Click on <code class="docutils literal notranslate"><span class="pre">file,</span></code> <code class="docutils literal notranslate"><span class="pre">open</span> <span class="pre">repo</span></code>, and select the repo containing your changes. On the left-hand side, you’ll see the “file” overview. Under unstaged files, you can review your changes. Click the green “stage all changes” button or right-click on individual files/folders and select “stage.” The files will be added to the “staged” files windows. Following, provide a name for your changes (commit) in the summary field below and add a short but meaningful description of your changes. Lastly, hit the green “Stage changes/changes to commit” button.</p>
+<p>When you’re done making changes, you’ll need to <code class="docutils literal notranslate"><span class="pre">commit</span></code> them to the repository. Committing a change records it in the repository’s history and makes it part of the codebase.</p>
+<p><code class="docutils literal notranslate"><span class="pre">BASH</span></code>:To commit a change, run the following commands in the terminal:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Your</span> <span class="pre">commit</span> <span class="pre">message.&quot;</span></code></p>
+<ul>
+<li><p>Replace “Your commit message” with a brief description of the changes you made.</p></li>
+</ul>
+</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">Gitkraken</span></code>:  Click on <code class="docutils literal notranslate"><span class="pre">file,</span></code> <code class="docutils literal notranslate"><span class="pre">open</span> <span class="pre">repo</span></code>, and select the repo containing your changes. On the left-hand side, you’ll see the “file” overview. Under unstaged files, you can review your changes.</p>
+<ul class="simple">
+<li><p>Click the green <strong><code class="docutils literal notranslate"><span class="pre">stage</span> <span class="pre">all</span> <span class="pre">changes</span></code></strong> button
+<strong>or</strong></p></li>
+<li><p>right-click on individual <code class="docutils literal notranslate"><span class="pre">files/folders</span></code> and select <code class="docutils literal notranslate"><span class="pre">stage</span></code>.
+The files will be added to the <code class="docutils literal notranslate"><span class="pre">staged</span></code> files windows. Following:</p>
+<ul>
+<li><p>provide a name for your changes (<code class="docutils literal notranslate"><span class="pre">commit</span></code>) in the summary field below and add a short but meaningful description of your changes</p></li>
+<li><p>hit the green <code class="docutils literal notranslate"><span class="pre">Stage</span> <span class="pre">changes/changes</span> <span class="pre">to</span> <span class="pre">commit</span></code> button.</p></li>
+</ul>
+</li>
+</ul>
 <img src="https://github.com/felixkoerber/jb/blob/main/static/stage_menu.png?raw=true" alt="depicting the contents of the course template repository on GitHub" class="bg-primary" width="300px">
 </section>
 <section id="push-changes">
 <h3>5. Push changes<a class="headerlink" href="#push-changes" title="Link to this heading">#</a></h3>
-<p>Finally, you’ll need to “push” your changes to your remote repository on GitHub. This will upload your changes to the website so that others can see them.</p>
-<p><code class="docutils literal notranslate"><span class="pre">BASH</span></code>: To push your changes, run the following command: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">master</span></code>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Gitkraken</span></code>: Hit the “Push” button on the upper center of the window.</p>
+<p>Finally, you’ll need to <code class="docutils literal notranslate"><span class="pre">push</span></code> your changes to your remote repository on GitHub. This will upload your changes to the website so that others can see them.</p>
+<p><code class="docutils literal notranslate"><span class="pre">BASH</span></code>: To push your changes, run the following command: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Gitkraken</span></code>: Hit the <code class="docutils literal notranslate"><span class="pre">Push</span></code> button on the upper center of the window.</p>
 </section>
 </section>
 <section id="hosting-a-website-using-github-pages">
@@ -744,24 +769,24 @@ The website is generated directly from the contents of your GitHub repository an
 <p>If we take a closer look at the <code class="docutils literal notranslate"><span class="pre">.github/workflows</span></code> folder, we’ll find a file called <code class="docutils literal notranslate"><span class="pre">book.yml.</span></code> That already contains all the instructions necessary for GitHub to build your book automatically. All we need to do now is change a few of the settings of our online repo.</p>
 <section id="setting-up-your-website">
 <h3>Setting up your website<a class="headerlink" href="#setting-up-your-website" title="Link to this heading">#</a></h3>
-<p><strong>1.Open your repo in your browser and click “Settings.”</strong></p>
+<p><strong>1.Open your repo in your browser and click <code class="docutils literal notranslate"><span class="pre">Settings</span></code>.</strong></p>
 <img src="https://github.com/felixkoerber/jb/blob/main/static/settings.png?raw=true" alt="depicting the contents of the course template repository on GitHub" class="bg-primary" width="600px">
-<p><strong>2.Click on “Pages” under “Code and automation”</strong></p>
+<p><strong>2. Navigate to <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">and</span> <span class="pre">automation</span></code> and click on <code class="docutils literal notranslate"><span class="pre">Pages</span></code></strong></p>
 <img src="https://github.com/felixkoerber/jb/blob/main/static/pages.png?raw=true" alt="depicting the contents of the course template repository on GitHub" class="bg-primary" width="300px">
-<p><strong>3. Under Source, select “deploy from branch”</strong></p>
+<p><strong>3. Under <code class="docutils literal notranslate"><span class="pre">Source</span></code>, select <code class="docutils literal notranslate"><span class="pre">deploy</span> <span class="pre">from</span> <span class="pre">branch</span></code></strong></p>
 <img src="https://github.com/felixkoerber/jb/blob/main/static/deploy.png?raw=true" alt="depicting the contents of the course template repository on GitHub" class="bg-primary" width="300px">
-<p><strong>4. Under Branch: Select branch “main” and select the “/root” folder and save</strong></p>
-<img src="https://github.com/felixkoerber/jb/blob/main/static/branch.png?raw=true" alt="depicting the contents of the course template repository on GitHub" class="bg-primary" width="500px">
+<p><strong>4. Under <code class="docutils literal notranslate"><span class="pre">Branch</span></code>: Select branch <code class="docutils literal notranslate"><span class="pre">main</span></code> and select the <code class="docutils literal notranslate"><span class="pre">/root</span></code> folder and save (at the bottom)</strong></p>
+<img src="https://raw.githubusercontent.com/jannikahollmann/Create_Interactive_Content/main/static/main_root.png" alt="config file adjustment" alt="depicting the contents of the course template repository on GitHub" class="bg-primary" width="500px">
 <p><strong>5.Push a new commit to your repo (e.g., add a line to your <a class="reference external" href="http://README.md">README.md</a> or make any change to any file in your GitHub repo)</strong></p>
 </section>
 <section id="checking-your-workflow">
 <h3>Checking your workflow<a class="headerlink" href="#checking-your-workflow" title="Link to this heading">#</a></h3>
-<p>Following, if you now click on “Actions” at the top of your repo, you should see that a workflow called “pages and deployment” is running.</p>
-<img src="https://github.com/felixkoerber/jb/blob/main/static/actions_deployment.png?raw=true" alt="depicting the contents of the course template repository on GitHub" class="bg-primary" width="300px">
+<p>Following, if you now click on <code class="docutils literal notranslate"><span class="pre">Actions</span></code> at the top of your repo, you should see that a workflow called <code class="docutils literal notranslate"><span class="pre">pages</span> <span class="pre">and</span> <span class="pre">deployment</span></code> is running.</p>
+<img src="https://raw.githubusercontent.com/jannikahollmann/Create_Interactive_Content/main/static/action_deployment.png" alt="depicting the contents of the course template repository on GitHub" class="bg-primary" width="300px">
 </section>
 <section id="getting-your-link">
 <h3>Getting your Link<a class="headerlink" href="#getting-your-link" title="Link to this heading">#</a></h3>
-<p>Once that process has been completed, i.e., it is marked with a green checkmark, head back over to “settings” -&gt; “pages”. At the top, under “GitHub pages,” you should now find a field that looks like this.</p>
+<p>Once that process has been completed, i.e., it is marked with a green checkmark, head back over to <code class="docutils literal notranslate"><span class="pre">settings</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">pages</span></code>. At the top, under <code class="docutils literal notranslate"><span class="pre">GitHub</span> <span class="pre">pages</span></code>, you should now find a field that looks like this.</p>
 <img src="https://github.com/felixkoerber/jb/blob/main/static/pages_link.png?raw=true" alt="depicting the contents of the course template repository on GitHub" class="bg-primary" width="500px">
 <p>Clicking on the displayed link should lead you to your newly built content site. Now, you can simply copy that link and add it to your repos <a class="reference external" href="http://README.md">README.md</a>, so people can actually find your website.
 Done!</p>
